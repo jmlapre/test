@@ -1,5 +1,15 @@
 FROM docker/dev-environments-default:stable-1
 
+RUN --mount=type=cache,target=/var/cache/apt \
+ apt-get update && apt-get install -y \
+ autoconf \
+ bear \
+ build-essential \
+ cmake \
+ python3-pip
+
+RUN pip install requests
+
 ARG TOKEN
 USER vscode
 
