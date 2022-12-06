@@ -1,0 +1,10 @@
+FROM docker/dev-environments-default:stable-1
+
+ARG TOKEN
+USER vscode
+
+WORKDIR /home/vscode
+
+RUN git clone https://${TOKEN:?err}@github.com/sstsimulator/sstcc.git
+
+ENTRYPOINT ["sleep", "infinity"]
