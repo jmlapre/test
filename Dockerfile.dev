@@ -11,9 +11,8 @@ RUN --mount=type=cache,target=/var/cache/apt \
 RUN pip install requests
 
 ARG TOKEN
-USER vscode
 
-WORKDIR /home/vscode
+WORKDIR /code
 
 RUN git clone https://${TOKEN:?err}@github.com/sstsimulator/sstcc.git
 
