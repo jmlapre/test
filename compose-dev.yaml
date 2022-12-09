@@ -1,5 +1,7 @@
 services:
   app:
+    environment:
+    - TOKEN=${TOKEN}
     build:
       context: .
       dockerfile: Dockerfile.dev
