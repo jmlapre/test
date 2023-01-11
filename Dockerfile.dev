@@ -16,6 +16,6 @@ ARG TOKEN
 
 WORKDIR /code
 
-RUN git clone https://${TOKEN:?err}@github.com/sstsimulator/sstcc.git
+# RUN git clone https://${TOKEN:?err}@github.com/sstsimulator/sstcc.git
 
 ENTRYPOINT ["sleep", "infinity"]
